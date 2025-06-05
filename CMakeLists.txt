@@ -14,6 +14,9 @@ add_subdirectory(threadlogger)
 # plugincpp
 add_subdirectory(plugin)
 
+# pluginapi
+add_subdirectory(pluginapi)
+
 # timer
 add_subdirectory(timer)
 
