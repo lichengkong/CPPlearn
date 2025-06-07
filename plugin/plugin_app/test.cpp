@@ -64,7 +64,7 @@ msgpack::sbuffer mock_client_request_buffer1(T& presolver, const F& f, Args... a
 }
 
 void test_custom_dll(){
-  plugin_resolver resolver("./libcustom.dylib");
+  plugin_resolver resolver("/home/ck/workspace/CPPlearn/build/plugin/libcustom.so");
   auto hello_buf = mock_client_request_buffer("hello");
   auto plus_buf = mock_client_request_buffer("plus", 2, 3);
 
@@ -79,7 +79,7 @@ void test_custom_dll(){
 int multiply(int a, int b);
 
 void test_dummy_dll(){
-  plugin_resolver resolver("./libdummy.dylib");
+  plugin_resolver resolver("/home/ck/workspace/CPPlearn/build/plugin/libdummy.so");
 
   auto buf1 = mock_client_request_buffer1(resolver, purecpp::multiply, 2, 3);
   int r1 = resolver.call<int>(buf1);

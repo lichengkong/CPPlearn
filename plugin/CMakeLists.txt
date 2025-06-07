@@ -20,8 +20,9 @@ add_library(custom SHARED plugin/custom_plugin.cc)
 add_library(dummy SHARED plugin/dummy_plugin.cc)
 
 add_executable(plugin_app plugin_app/main.cpp)
+add_executable(plugin_app_test plugin_app/test.cpp)
 
 target_link_libraries(plugin_app boost_system boost_filesystem pthread dl)
-
+target_link_libraries(plugin_app_test boost_system boost_filesystem pthread dl)
 add_executable(client client/app_client.cpp)
 target_link_libraries(client  pthread)
